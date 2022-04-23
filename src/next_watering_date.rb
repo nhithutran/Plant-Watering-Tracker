@@ -9,6 +9,7 @@ class NextWatering
 
     def date_calculation
        if @category == 'Cacti or Succulent'
-    array_of_pwl.each do |p|  
+            #parse in last_watered and calc next month 
+            
     end
 end    
