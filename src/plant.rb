@@ -1,5 +1,4 @@
 class Plant
-    # ?User to be able to input name, category and last watered date.  Should :name & :category be
     attr_reader :plant_name, :category, :last_watered
 
     def initialize(plant_name, category, last_watered)

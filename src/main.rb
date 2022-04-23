@@ -4,7 +4,7 @@ require 'rubocop'
 require 'tty-font'
 require 'tty-table'
 require_relative './plant.rb'
-# require_relative './next_watering-date.rb'
+require_relative './next_watering-date.rb'
 
 prompt = TTY::Prompt.new
 font = TTY::Font.new(:straight)
@@ -44,9 +44,11 @@ loop do # Main Application Loop - menu options
     array_of_pwl.<<pwl  
   puts "The plant you have added is a #{plant_name} in the category of #{category} and last watered #{last_watered}.".green
     elsif menu == 'Existing plants list' # Print display_nice_record
-        #ADD TABLE USSING TTY TABLE      
+        #ADD TABLE USEING TTY TABLE?     
         array_of_pwl.each do |p|  
         p.display_nice_record
+    elsif menu == 'View plant next watering date'
+        # DISPLAY NEXT DATE NEXT TO LAST WATERED
     end  
           
   end  
