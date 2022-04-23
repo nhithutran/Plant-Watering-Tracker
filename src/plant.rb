@@ -1,4 +1,4 @@
-class PlantWateringLog
+class Plant
     # ?User to be able to input name, category and last watered date.  Should :name & :category be
     attr_reader :plant_name, :category, :last_watered
 
@@ -9,6 +9,6 @@ class PlantWateringLog
     end
 
     def display_nice_record # Method to display inputed by user nicely
-      puts plant_name() + '' + category() + '' + last_watered() + ''
+      puts @plant_name + ' ' + @category + ' ' + @last_watered 
     end
 end

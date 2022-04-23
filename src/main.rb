@@ -2,11 +2,13 @@ require 'colorize'
 require 'tty-prompt'
 require 'rubocop'
 require 'tty-font'
+require 'tty-table'
 require_relative './plant.rb'
 # require_relative './next_watering-date.rb'
 
 prompt = TTY::Prompt.new
 font = TTY::Font.new(:straight)
+
 
 puts '------------------------------------------------------------------'
 puts font.write('PLANT WATERING TRACKER').green.bold
@@ -41,8 +43,8 @@ loop do # Main Application Loop - menu options
   pwl = Plant.new(plant_name, category, last_watered) # Confirm to user their input
     array_of_pwl.<<pwl  
   puts "The plant you have added is a #{plant_name} in the category of #{category} and last watered #{last_watered}.".green
-    elsif menu == 'Existing plants list'
-        # for pwl in array_of_pwl pwl.display_nice_record
+    elsif menu == 'Existing plants list' # Print display_nice_record
+        #ADD TABLE USSING TTY TABLE      
         array_of_pwl.each do |p|  
         p.display_nice_record
     end  
