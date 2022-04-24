@@ -44,10 +44,10 @@ loop do # Main Application Loop - menu options
         #ADD TABLE USEING TTY TABLE?     
         array_of_pwl.each do |p|  
         p.display_nice_record
-    end    
+        end    
 
-    nwd = Next_date.new()  
-    elsif menu == 'View plant next watering date'
+    # nwd = Next_date.new()  
+    # elsif menu == 'View plant next watering date'
 
     end 
         # DISPLAY NEXT DATE NEXT TO LAST WATERED          

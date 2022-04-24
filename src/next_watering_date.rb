@@ -1,5 +1,5 @@
 class NextWateringDate
-    attr_reader :plant_name, :category, :last_watered, :next_watering_date
+    attr_reader :plant_name, :category, :last_watered
 
     def initialize(plant_name, category, last_watered)
         @plant_name = plant_name
@@ -7,7 +7,7 @@ class NextWateringDate
         @last_watered = last_watered
         @next_watering = []
 
-    def date_calculation
+    def calculated_date
        if @category == 'Cacti or Succulent'
             #parse in last_watered and calc next month 
             
