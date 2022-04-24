@@ -3,6 +3,7 @@ require 'tty-prompt'
 require 'rubocop'
 require 'tty-font'
 require 'tty-table'
+require 'json'
 require_relative 'plant_watering_log.rb'
 # require_relative './next_watering-date.rb'
 
