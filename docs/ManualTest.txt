@@ -1,0 +1,21 @@
+# Manual Test Scenario
+### Scenario 1 - Add a new plant 
+Given: The Plant Watering Tracker menu is displayed
+When: The user selects 'Add a new plant' menu option
+Then: "Please enter in you plant name" question displays
+
+### Scenario 2 - Confirmation new plant is added
+Given: 'Please enter in you plant name' question displays
+And: The user enters Fiddle Leaf Fig
+And: Selects 'Folaige' as category
+When: 'When did you last water the plant? Please enter a date in the following format DD/MM/YYY.' 
+       question is displayed
+And: The user enters 24/04/2022
+Then: 'The plant you have added is a Fiddle Leaf Fig in the category of Foliage and last watered
+       date 24/04/2022' confirmation will displayed
+
+### Scenario 3 - Existing plant list displays
+Given: The Plant Watering Tracker menu is displayed
+When: The user selects 'Existing plants list' menu option
+Then: Then existing plants list will displayed
+And: Display the plant name, category and last watered date of previously added plants      

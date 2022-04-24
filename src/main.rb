@@ -49,8 +49,7 @@ loop do # Main Application Loop - menu options
     pwl = Plant.new(plant_name, category, last_watered) # Confirm to user their input
     array_of_pwl.<<pwl # Store input ruby
     puts "The plant you have added is a #{plant_name} in the category of #{category} and last watered #{last_watered}.".green
-  elsif menu == 'Existing plants list' # Print display_nice_record
-    # ADD TABLE USEING TTY TABLE?
+  elsif menu == 'Existing plants list' # Print display_nice_record # ADD TABLE USING TTY TABLE GEM LATER?
     array_of_pwl.each do |p|
       p.display_nice_record
     end
