@@ -27,15 +27,24 @@ loop do # Main Application Loop - menu options
 
   puts menu
   if menu == 'Add a new plant'
+    # begin # ERROR HANDING FOR STRING NOT WORKING
     plant_name = prompt.ask('Please enter in your plant name?')
+    # rescue NoInputError
+    #   puts "Oops you need to enter a plant name"
+    # rescue TypeError 
+    #   puts "Oops you entered a number, please enter a plant name"  
+    # end  
     category = prompt.select('Please select the plant category?') do |choice|
       choice.choice 'Cacti or Succulent'
       choice.choice 'Foliage'
       choice.choice 'Palm'
       choice.choice 'Flowering'
     end
+    # begin #ERROR HANDLIN FOR DATE NOT WORKING
     last_watered = prompt.ask('When did you last water the plant? Please enter a date in the following format DD/MM/YYY.')
-
+    # rescue InvalidDateFomat
+    #   puts "Please enter date in the following format DD/MM/YYYY"
+  end
     pwl = Plant.new(plant_name, category, last_watered) # Confirm to user their input
     array_of_pwl.<<pwl # Store input ruby
     puts "The plant you have added is a #{plant_name} in the category of #{category} and last watered #{last_watered}.".green
@@ -44,16 +53,10 @@ loop do # Main Application Loop - menu options
     array_of_pwl.each do |p|
       p.display_nice_record
     end
+  # RAN OUT OF TIME TO WORK THIS OUT
+  #  elsif menu == 'View plant next watering date'  
+  # end
 
-
-   elsif menu == 'View plant next watering date'
-    
-  end
-  
-  else menu == 'Exit'
-       exit 0
-  end     
-
-  # Handle no input
-  # if plant_name != ""
-end
+  # else menu == 'Exit'
+  #      exit 0
+  # end     
