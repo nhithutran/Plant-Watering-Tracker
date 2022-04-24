@@ -3,12 +3,11 @@ require 'tty-prompt'
 require 'rubocop'
 require 'tty-font'
 require 'tty-table'
-require_relative './plant.rb'
+require_relative 'plant_watering_log.rb'
 # require_relative './next_watering-date.rb'
 
 prompt = TTY::Prompt.new
 font = TTY::Font.new(:straight)
-
 
 puts '------------------------------------------------------------------'
 puts font.write('PLANT WATERING TRACKER').green.bold
@@ -34,27 +33,27 @@ loop do # Main Application Loop - menu options
       choice.choice 'Foliage'
       choice.choice 'Palm'
       choice.choice 'Flowering'
-  end
+    end
     last_watered = prompt.ask('When did you last water the plant? Please enter a date in the following format DD/MM/YYY.')
+
+    pwl = Plant.new(plant_name, category, last_watered) # Confirm to user their input
+    array_of_pwl.<<pwl # Store input ruby
+    puts "The plant you have added is a #{plant_name} in the category of #{category} and last watered #{last_watered}.".green
+  elsif menu == 'Existing plants list' # Print display_nice_record
+    # ADD TABLE USEING TTY TABLE?
+    array_of_pwl.each do |p|
+      p.display_nice_record
+    end
+
+
+   elsif menu == 'View plant next watering date'
+    
+  end
   
-  pwl = Plant.new(plant_name, category, last_watered) # Confirm to user their input
-    array_of_pwl.<<pwl  # Store input ruby 
-  puts "The plant you have added is a #{plant_name} in the category of #{category} and last watered #{last_watered}.".green
-    elsif menu == 'Existing plants list' # Print display_nice_record
-        #ADD TABLE USEING TTY TABLE?     
-        array_of_pwl.each do |p|  
-        p.display_nice_record
-        end    
+  else menu == 'Exit'
+       exit 0
+  end     
 
-    # nwd = Next_date.new()  
-    # elsif menu == 'View plant next watering date'
-
-    end 
-        # DISPLAY NEXT DATE NEXT TO LAST WATERED          
-
-    # else menu == 'Exit'
-    #      exit 0    
-
-# Handle no input
-# if plant_name != ""
+  # Handle no input
+  # if plant_name != ""
 end

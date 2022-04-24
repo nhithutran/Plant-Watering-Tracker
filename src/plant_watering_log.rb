@@ -1,4 +1,4 @@
-class Plant
+class Plant_watering_log
   attr_reader :plant_name, :category, :last_watered
 
   def initialize(plant_name, category, last_watered)
