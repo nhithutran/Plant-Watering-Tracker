@@ -1,4 +1,4 @@
-class NextWatering
+class NextWateringDate
     attr_reader :plant_name, :category, :last_watered, :next_watering_date
 
     def initialize(plant_name, category, last_watered)
